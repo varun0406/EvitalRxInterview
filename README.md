@@ -12,3 +12,9 @@ DELETE /scheduled-reports : Deletes the Report you want based on frequency(fred)
     user: "avnadmin",
     password: "AVNS_vXk0o9vU80f3EwAA3Te",
     database: "Evital"
+
+First the Index.js file should be run for initialising the server then you must have postman or any another api caller 
+
+For Scheduler
+
+There is Scheduler.js file which should be startd after  iniitalising server in another terminal 
