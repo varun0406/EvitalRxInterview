@@ -14,7 +14,7 @@ Run Report Endpoint:- Activates the Function in Nodejs, Which will restruture/re
 Scheduler JS:- It is designed In a way that it will be give post request to Run-reports api and first directly on running and then 24 hrs later.
 
 partial Programming logic is wriiten nodejs and partial in mysql funtions and triggers 
---
+---------
 CREATE DEFINER="avnadmin"@"%" PROCEDURE "GetScheduledReports"(IN freq VARCHAR(10))
 BEGIN
     IF freq = 'daily' THEN
@@ -25,7 +25,7 @@ BEGIN
         SELECT 'Invalid frequency' AS Error;
     END IF;
 END
---
+-------------
 CREATE DEFINER="avnadmin"@"%" PROCEDURE "UpdateTotalDailyEarn"()
 BEGIN
     DECLARE done INT DEFAULT FALSE;
