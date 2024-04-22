@@ -13,6 +13,55 @@ const pool = mysql.createPool({
     password: "AVNS_vXk0o9vU80f3EwAA3Te",
     database: "Evital"
 });
+
+
+
+app.delete("/scheduled-reports", (req, res) => {
+    const freq = req.query.freq;
+    const date = req.query.date;
+    pool.getConnection((err, connection) => {
+        if (err) {
+            console.error("Error getting connection from pool:", err);
+            res.status(500).send("Error deleting scheduled report");
+            return;
+        }
+        if (freq === 'daily') {
+            connection.query(
+                "delete from TOTAL_DAILY_EARN WHERE DATEE = ?",
+                [date],
+                (err, results) => {
+                    connection.release();
+                    if (err) {
+                        console.error("Error deleting scheduled report:", err);
+                        res.status(500).send("Error deleting scheduled report");
+                        return;
+                    }
+                    res.status(204).json({ message: 'Scheduled report deleted successfully' });
+
+                }
+            );
+        } else if (freq === 'weekly') {
+            connection.query(
+                "delete from TOTAL_WEEKLY_EARN WHERE week_start_date = ?",
+                [date],
+                (err, results) => {
+                    connection.release();
+                    if (err) {
+                        console.error("Error deleting scheduled report:", err);
+                        res.status(500).send("Error deleting scheduled report");
+                        return;
+                    }
+                    res.status(204).json({ message: 'Scheduled report deleted successfully' });
+
+                }
+            );
+        } else {
+            res.status(400).send("Invalid frequency");
+            connection.release();
+        
+     }
+});
+});
 app.post("/run-reports", (req, res) => {
     reportrunner.runReport();
     res.status(200).send("Reports generated successfully");
