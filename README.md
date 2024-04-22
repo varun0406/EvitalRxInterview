@@ -10,6 +10,7 @@ port: 25192,
 user: "avnadmin",
 password: "AVNS_vXk0o9vU80f3EwAA3Te",
 database: "Evital"
+Run Report Endpoint:- Activates the Function in Nodejs, Which will restruture/recompile all the reports and Update the existing if there is any update in data in Orders table and also Update the Reports if neccessary.
 ----------------------------
 
 -
