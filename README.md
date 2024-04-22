@@ -15,8 +15,6 @@ Scheduler JS:- It is designed In a way that it will be give post request to Run-
 
 partial Programming logic is wriiten nodejs and partial in mysql funtions and triggers 
 
-
--
 First the Index.js file should be run for initialising the server then you must have postman or any another api caller 
 
 For Scheduler
