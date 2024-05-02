@@ -7,10 +7,10 @@ const reportrunner = require('./reportrunner');
 // Create a connection pool to the database
 const pool = mysql.createPool({
     connectionLimit: 10,
-        host: "mysql-2759b698-kotwaniv04-f738.d.aivencloud.com",
+        host: "",
         port: 25192,
-        user: "avnadmin",
-        password: "AVNS_vXk0o9vU80f3EwAA3Te",
+        user: "",
+        password: "",
         database: "Evital"
 });
 
